@@ -34,6 +34,12 @@ This chef cookbook can be used to provision a ready-to-use virtual box machine t
     <td><tt>2.2.1</tt></td>
   </tr>
   <tr>
+    <td><tt>['open_call']['ruby_gems']</tt></td>
+    <td>Array</td>
+    <td>Ruby gems to install, each array element is a hash where key is gem name and value is gem version</td>
+    <td><tt>[]</tt></td>
+  </tr>
+  <tr>
     <td><tt>['open_call']['elasticsearch_version']</tt></td>
     <td>String</td>
     <td>ElasticSearch version to install</td>

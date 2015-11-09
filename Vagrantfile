@@ -83,6 +83,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
+      'open_call' => {
+        'ruby_gems' => [
+          { 'bundler' => '1.9.1' },
+          { 'foreman' => '0.78.0' }
+        ]
+      },
       'java' => {
         'install_flavor' => 'oracle',
         'jdk_version' => '8',
