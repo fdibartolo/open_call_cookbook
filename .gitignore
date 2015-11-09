@@ -21,3 +21,5 @@ bin/*
 
 # Local rvm stuff
 .ruby-*
+
+notes.txt
