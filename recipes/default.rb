@@ -64,3 +64,4 @@ end
 #   environment 'PATH' => "/usr/local/elasticsearch/bin:#{ENV['PATH']}"
 # end
 
+include_recipe 'postgresql::server'
