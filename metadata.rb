@@ -7,3 +7,4 @@ long_description 'Installs/Configures open_call_cookbook'
 version          '0.1.0'
 
 depends 'git', '~> 4.3.4'
+depends 'rbenv', '~> 1.7.1'
