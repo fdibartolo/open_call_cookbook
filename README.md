@@ -8,13 +8,17 @@ This chef cookbook can be used to provision a ready-to-use virtual box machine t
 
 ## Requirements
 
-* Install [Vagrant](https://www.vagrantup.com/)
+You must have:
 
-* Add [Omnibus](https://github.com/chef/vagrant-omnibus) plugin
+* [Vagrant](https://www.vagrantup.com/)
+
+* [Chef Development Kit](https://downloads.chef.io/chef-dk/)
+
+* [Vagrant Omnibus](https://github.com/chef/vagrant-omnibus) plugin
 
     `$ vagrant plugin install vagrant-omnibus`
 
-* Add [Berkshelf](https://github.com/berkshelf/vagrant-berkshelf) plugin
+* [Vagrant Berkshelf](https://github.com/berkshelf/vagrant-berkshelf) plugin
 
     `$ vagrant plugin install vagrant-berkshelf`
 
