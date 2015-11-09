@@ -1,4 +1,4 @@
-# open_call_cookbook-cookbook
+# open_call-cookbook
 
 TODO: Enter the cookbook description here.
 
@@ -16,7 +16,7 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['open_call_cookbook']['bacon']</tt></td>
+    <td><tt>['open_call']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -25,14 +25,14 @@ TODO: List your supported platforms.
 
 ## Usage
 
-### open_call_cookbook::default
+### open_call::default
 
-Include `open_call_cookbook` in your node's `run_list`:
+Include `open_call` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[open_call_cookbook::default]"
+    "recipe[open_call::default]"
   ]
 }
 ```

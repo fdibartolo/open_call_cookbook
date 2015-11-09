@@ -1,8 +1,8 @@
-# Cookbook Name:: open_call_cookbook
+# Cookbook Name:: open_call
 # Recipe:: default
 
 include_recipe 'git::default'
-include_recipe 'open_call_cookbook::ruby'
+include_recipe 'open_call::ruby'
 
 # java #####################
 

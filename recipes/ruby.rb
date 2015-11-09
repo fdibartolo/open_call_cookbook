@@ -1,4 +1,4 @@
-# Cookbook Name:: open_call_cookbook
+# Cookbook Name:: open_call
 # Recipe:: ruby
 
 include_recipe 'rbenv::default'

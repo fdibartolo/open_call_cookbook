@@ -115,7 +115,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
-      'recipe[open_call_cookbook::default]'
+      'recipe[open_call::default]'
     ]
   end
 end
