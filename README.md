@@ -1,10 +1,22 @@
-# open_call-cookbook
+# open_call_cookbook
 
-TODO: Enter the cookbook description here.
+This chef cookbook can be used to provision a ready-to-use virtual box machine to work on the [open_call](https://github.com/nicopaez/opencall) project
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+* Ubuntu 12.04
+
+## Requirements
+
+* Install [Vagrant](https://www.vagrantup.com/)
+
+* Add [Omnibus](https://github.com/chef/vagrant-omnibus) plugin
+
+    `$ vagrant plugin install vagrant-omnibus`
+
+* Add [Berkshelf](https://github.com/berkshelf/vagrant-berkshelf) plugin
+
+    `$ vagrant plugin install vagrant-berkshelf`
 
 ## Attributes
 
@@ -23,9 +35,7 @@ TODO: List your supported platforms.
   </tr>
 </table>
 
-## Usage
-
-### open_call::default
+## Use it from your own vagrant file
 
 Include `open_call` in your node's `run_list`:
 
@@ -36,7 +46,3 @@ Include `open_call` in your node's `run_list`:
   ]
 }
 ```
-
-## License and Authors
-
-Author:: YOUR_NAME (<YOUR_EMAIL>)
