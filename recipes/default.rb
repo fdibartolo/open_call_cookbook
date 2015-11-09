@@ -49,19 +49,15 @@ elasticsearch_install 'elasticsearch' do
   action :install
 end
 
-# ruby_block "add-elasticsearch-to-PATH" do
-#   block do
-#     file = Chef::Util::FileEdit.new('/home/vagrant/.profile')
-#     file.insert_line_if_no_match(
-#       "# Add elasticsearch to PATH",
-#       "\n# Add elasticsearch to PATH\nexport PATH=\"/usr/local/elasticsearch/bin:$PATH\""
-#     )
-#     file.write_file
-#   end
-# end
+directory '/etc/profile.d' do
+  mode 00755
+end
 
-# execute 'elasticsearch' do
-#   environment 'PATH' => "/usr/local/elasticsearch/bin:#{ENV['PATH']}"
-# end
+file '/etc/profile.d/elasticsearch.sh' do
+  content "export PATH=/usr/local/elasticsearch/bin:$PATH"
+  mode 00755
+end
+
+# postgresql ###############
 
 include_recipe 'postgresql::server'
