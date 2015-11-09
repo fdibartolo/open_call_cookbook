@@ -29,3 +29,7 @@ rbenv_gem 'foreman' do
   ruby_version '2.2.1'
   version '0.78.0'
 end
+
+# java #####################
+
+include_recipe 'java'
