@@ -3,8 +3,8 @@
 
 elasticsearch_install 'elasticsearch' do
   type :tarball
-  dir '/usr/local'
-  version '1.4.5'
+  dir node['open_call']['elasticsearch_path']
+  version node['open_call']['elasticsearch_version']
   owner 'vagrant'
   group 'vagrant'
   action :install
@@ -15,6 +15,6 @@ directory '/etc/profile.d' do
 end
 
 file '/etc/profile.d/elasticsearch.sh' do
-  content "export PATH=/usr/local/elasticsearch/bin:$PATH"
+  content "export PATH=#{node['open_call']['elasticsearch_path']}/elasticsearch/bin:$PATH"
   mode 00755
 end

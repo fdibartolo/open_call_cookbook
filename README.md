@@ -28,10 +28,22 @@ This chef cookbook can be used to provision a ready-to-use virtual box machine t
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['open_call']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['open_call']['ruby_version']</tt></td>
+    <td>String</td>
+    <td>Ruby version to install and make default</td>
+    <td><tt>2.2.1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['open_call']['elasticsearch_version']</tt></td>
+    <td>String</td>
+    <td>ElasticSearch version to install</td>
+    <td><tt>1.4.5</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['open_call']['elasticsearch_path']</tt></td>
+    <td>String</td>
+    <td>ElasticSearch path to install into</td>
+    <td><tt>/usr/local</tt></td>
   </tr>
 </table>
 
