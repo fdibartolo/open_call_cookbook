@@ -33,3 +33,7 @@ end
 # java #####################
 
 include_recipe 'java'
+
+# node #####################
+
+include_recipe 'nodejs'
