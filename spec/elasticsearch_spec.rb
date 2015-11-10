@@ -8,9 +8,9 @@ describe 'open_call::elasticsearch' do
     end.converge(described_recipe)
   end
 
-  # it 'installs given elasticsearch version' do
-  #   expect(chef_run).to install_package('elasticsearch').with(version: '9.8.7')
-  # end
+  it 'installs given elasticsearch version' do
+    expect(chef_run).to install_elasticsearch('elasticsearch').with(version: '9.8.7')
+  end
 
   it 'creates directory with mode 755' do
     expect(chef_run).to create_directory('/etc/profile.d').with(mode: 00755)
