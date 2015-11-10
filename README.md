@@ -1,4 +1,5 @@
 # open_call_cookbook
+[![Build Status](https://travis-ci.org/fdibartolo/open_call_cookbook.svg?branch=master)](https://travis-ci.org/fdibartolo/open_call_cookbook)
 
 This chef cookbook can be used to provision a ready-to-use virtual box machine to work on the [open_call](https://github.com/nicopaez/opencall) project
 
