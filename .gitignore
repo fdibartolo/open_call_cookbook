@@ -22,4 +22,7 @@ bin/*
 # Local rvm stuff
 .ruby-*
 
+# cloned repository from the ::repo recipe
+repo/
+
 notes.txt
