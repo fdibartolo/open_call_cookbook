@@ -65,7 +65,8 @@ Include `open_call` in your node's `run_list`:
 ```json
 {
   "run_list": [
-    "recipe[open_call::default]"
+    "recipe[open_call::default]",
+    "recipe[open_call::repo]" # -> skip if dont want to clone repo and prepare env (database, elasticsearch)
   ]
 }
 ```
