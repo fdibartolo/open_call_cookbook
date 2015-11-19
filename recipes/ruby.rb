@@ -1,6 +1,10 @@
 # Cookbook Name:: open_call
 # Recipe:: ruby
 
+package 'Install libffi-dev' do
+  package_name 'libffi-dev'
+end
+
 include_recipe 'rbenv::default'
 include_recipe 'rbenv::ruby_build'
 

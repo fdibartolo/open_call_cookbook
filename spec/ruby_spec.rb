@@ -17,6 +17,10 @@ describe 'open_call::ruby' do
     end
   end
 
+  it 'installs libffi-dev package' do
+    expect(chef_run).to install_package('libffi-dev')
+  end
+
   describe 'installs ruby' do
     it 'with given version' do
       expect(chef_run).to install_rbenv_ruby('9.8.7')
