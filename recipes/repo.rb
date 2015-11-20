@@ -18,6 +18,7 @@ end
 
 template '/vagrant/repo/create_elasticsearch_indices.rb' do
   source 'create_elasticsearch_indices.erb'
+  variables :port => node['open_call']['elasticsearch_port']
 end
 
 bash 'create elasticsearch indices' do

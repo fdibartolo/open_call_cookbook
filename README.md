@@ -56,6 +56,12 @@ You must have:
     <td>ElasticSearch path to install into</td>
     <td><tt>/usr/local</tt></td>
   </tr>
+  <tr>
+    <td><tt>['open_call']['elasticsearch_port']</tt></td>
+    <td>Integer</td>
+    <td>ElasticSearch port</td>
+    <td><tt>9200</tt></td>
+  </tr>
 </table>
 
 ## Use it from your own vagrant file

@@ -1,8 +1,9 @@
 require 'rake'
 require 'elasticsearch/extensions/test/cluster/tasks'
 
-Elasticsearch::Extensions::Test::Cluster.start(port: 9200, nodes: 1)
+Elasticsearch::Extensions::Test::Cluster.start(port: <%= @port %>, nodes: 1) unless 
+  Elasticsearch::Extensions::Test::Cluster.running?
 [SessionProposal, Tag].each do |model|
   model.__elasticsearch__.create_index! force: true
 end
-Elasticsearch::Extensions::Test::Cluster.stop(port: 9200)
+Elasticsearch::Extensions::Test::Cluster.stop(port: <%= @port %>)
