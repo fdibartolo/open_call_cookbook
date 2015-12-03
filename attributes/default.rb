@@ -6,3 +6,4 @@ default['open_call']['ruby_gems'] = []
 default['open_call']['elasticsearch_version'] = '1.4.5'
 default['open_call']['elasticsearch_path'] = '/usr/local'
 default['open_call']['elasticsearch_port'] = 9200
+default['open_call']['repo_path'] = '/vagrant'
