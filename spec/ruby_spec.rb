@@ -3,8 +3,8 @@ require 'spec_helper'
 describe 'open_call::ruby' do
   let(:chef_run) do 
     ChefSpec::SoloRunner.new do |node|
-      node.set['open_call']['ruby_version'] = '9.8.7'
-      node.set['open_call']['ruby_gems'] = [{ 'some_gem' => '1.2.3' }]
+      node.normal['open_call']['ruby_version'] = '9.8.7'
+      node.normal['open_call']['ruby_gems'] = [{ 'some_gem' => '1.2.3' }]
     end.converge(described_recipe)
   end
 

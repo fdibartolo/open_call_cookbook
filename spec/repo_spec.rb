@@ -3,7 +3,8 @@ require 'spec_helper'
 describe 'open_call::repo' do
   let(:chef_run) do 
     ChefSpec::SoloRunner.new do |node|
-      node.set['open_call']['elasticsearch_port'] = 9292
+      node.normal['open_call']['elasticsearch_port'] = 9292
+      node.normal['open_call']['elasticsearch_path'] = '/some/path'
     end.converge(described_recipe)
   end
 
@@ -23,18 +24,20 @@ describe 'open_call::repo' do
 
   describe 'creates file' do
     it 'from template to create elasticsearch indices' do
-      expect(chef_run).to create_template('/vagrant/repo/create_elasticsearch_indices.rb').
+      expect(chef_run).to create_template('/vagrant/repo/tmp/scripts/create_elasticsearch_indices.rb').
         with(source: 'create_elasticsearch_indices.erb')
     end
 
-    it 'with given elasticsearch port attribute' do
-      expect(chef_run).to render_file('/vagrant/repo/create_elasticsearch_indices.rb').
-        with_content(/(port: 9292, nodes: 1)/)
+    it 'with given elasticsearch port and ES path attributes' do
+      expect(chef_run).to render_file('/vagrant/repo/tmp/scripts/create_elasticsearch_indices.rb').
+        with_content { |content|
+          expect(content).to include("port: 9292, command: '/some/path/elasticsearch/bin/elasticsearch'") 
+        }
     end
   end
 
   it 'creates the elasticsearch indices' do
     expect(chef_run).to run_bash('create elasticsearch indices').
-      with(cwd: '/vagrant/repo', code: 'foreman run rails runner create_elasticsearch_indices.rb')
+      with(cwd: '/vagrant/repo', code: "rails runner 'tmp/scripts/create_elasticsearch_indices.rb'")
   end
 end
