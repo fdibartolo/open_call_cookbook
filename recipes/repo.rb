@@ -25,10 +25,10 @@ end
 
 template "#{node['open_call']['repo_path']}/tmp/scripts/create_elasticsearch_indices.rb" do
   source 'create_elasticsearch_indices.erb'
-  variables :port => node['open_call']['elasticsearch_port']
+  variables :port => node['open_call']['elasticsearch_port'], :command => "#{node['open_call']['elasticsearch_path']}/elasticsearch/bin/elasticsearch"
 end
 
 bash 'create elasticsearch indices' do
   cwd node['open_call']['repo_path']
-  code 'foreman run rails runner tmp/scripts/create_elasticsearch_indices.rb'
+  code "rails runner 'tmp/scripts/create_elasticsearch_indices.rb'"
 end

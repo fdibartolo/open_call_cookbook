@@ -1,8 +1,10 @@
 require 'rake'
 require 'elasticsearch/extensions/test/cluster/tasks'
 
-Elasticsearch::Extensions::Test::Cluster.start(port: <%= @port %>, nodes: 1) unless 
-  Elasticsearch::Extensions::Test::Cluster.running?
+es_test_args = { number_of_nodes: 1, cluster_name: 'opencall' }
+Elasticsearch::Extensions::Test::Cluster.start(
+  es_test_args.merge({ port: <%= @port %>, command: '<%= @command %>' })
+) unless Elasticsearch::Extensions::Test::Cluster.running? es_test_args
 [SessionProposal, Tag].each do |model|
   model.__elasticsearch__.create_index! force: true
 end
