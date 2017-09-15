@@ -5,7 +5,7 @@ This chef cookbook can be used to provision a ready-to-use virtual box machine t
 
 ## Supported Platforms
 
-* Ubuntu 12.04
+* Ubuntu 14.04
 
 ## Requirements
 
@@ -36,7 +36,7 @@ You must have:
     <td><tt>['open_call']['ruby_version']</tt></td>
     <td>String</td>
     <td>Ruby version to install and make default</td>
-    <td><tt>2.2.1</tt></td>
+    <td><tt>2.4.1</tt></td>
   </tr>
   <tr>
     <td><tt>['open_call']['ruby_gems']</tt></td>
@@ -48,7 +48,7 @@ You must have:
     <td><tt>['open_call']['elasticsearch_version']</tt></td>
     <td>String</td>
     <td>ElasticSearch version to install</td>
-    <td><tt>1.4.5</tt></td>
+    <td><tt>5.1.2</tt></td>
   </tr>
   <tr>
     <td><tt>['open_call']['elasticsearch_path']</tt></td>
@@ -72,7 +72,7 @@ Include `open_call` in your node's `run_list`:
 {
   "run_list": [
     "recipe[open_call::default]",
-    "recipe[open_call::repo]" // -> skip if dont want to clone repo and prepare env (database, elasticsearch)
+    "recipe[open_call::repo]" # -> skip if dont want to clone repo and prepare env (database, elasticsearch)
   ]
 }
 ```
