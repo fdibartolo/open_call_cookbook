@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         'oracle' => { 'accept_oracle_download_terms' => true }
       },
       'postgresql' => {
-        'version' => '9.3',
+        'version' => '9.6',
         'password' => { 'postgres' => '' },
         'pg_hba' => [
           {
